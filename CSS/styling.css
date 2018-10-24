@@ -1,0 +1,147 @@
+body {
+	background-image: linear-gradient(to bottom, white, #EEE5EE);
+	font-family: "Comic Sans MS", Sans;
+}
+
+header {
+	text-align: center;
+	font-size: 30px;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+h1 {
+	font-size: 150px;
+}
+
+.jumbotron {
+	background-image: url(./images/headerbackground.png);
+	background-size: cover;
+	height: 400px; 
+	text-align: center;
+	color: #60526C;
+	font-family: "Pacifico",cursive;
+	margin-bottom: 0px;
+	padding: 50px;
+}
+	
+nav {
+	position: relative;
+	top:0;
+}
+
+section {
+	margin-top: 50px;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+h2 {
+	font-family: 'Charmonman',cursive;
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+
+#about-me img {
+	float: left;
+}
+
+img{
+	border-radius: 5px;
+	border: none;
+}
+
+table {
+	width: 100%;
+	height: 300px;
+}
+
+th {
+	text-align: center;
+	background-color: rgba(204, 255, 250, 0.25);
+}
+
+th, td {
+	border-bottom: 1px solid lightgrey;
+}
+
+tr:nth-child(odd) {
+ 	background-color: rgba(255,255,255,0.5);
+ 	transition: background-color, 1s;
+ }
+
+tr:hover {
+	background-color: #ffe6d0;
+}
+
+#introduction {
+	background-color: orange;
+	border: 30px solid black;
+	margin-top: 0;
+}
+
+.intext {
+	display: inline;
+}
+
+header p{
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+.back-to-top {
+	position: fixed;
+	left:0;
+	bottom:0;
+}
+
+.gallery-content {
+	position: absolute;
+	font-size: 20px;
+	z-index: 3;
+}
+
+.gallery-container {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 400px;
+	position: relative;
+	z-index: 1;
+}
+
+.white-overcast {
+	position: absolute;
+	opacity: 0.25;
+	z-index: 2;
+}
+
+footer {
+	margin-top: 50px;
+	margin-left: 30px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+footer img {
+	margin-left: 30px;
+	margin-right: 30px;
+	border: 1px solid black;
+	padding: 15px;
+	border-radius: 50%;
+	float: left;
+}
+
+/*Responsive-mobile*/
+@media (max-width: 480px) {
+	#introduction {
+		font-size: 20px;
+	}
+	#introduction img {
+		width: 200px ;
+	}
+	#introduction .emoji {
+		width:20px;
+	}
+}

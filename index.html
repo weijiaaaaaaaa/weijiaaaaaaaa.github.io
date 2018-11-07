@@ -259,49 +259,7 @@
 	</div>
 </article>
 
-<script>
-// Running button
-const myButton = document.querySelector('#my-button')
-
-function randomPositionX () {
-	let X = Math.floor(Math.random()* 300);
-	
-	return X + 'px'
-}
-
-function randomPositionY () {
-	let Y = Math.floor(Math.random()* 300);
-
-	return Y + 'px'
-}
-
-let counter = 0
-myButton.onmouseover = function () {
-	counter = counter +1 
-	if (counter <= 10) {
-	myButton.style.left = randomPositionX();
-	myButton.style.top = randomPositionY();
-	}
-}
-
-// To do list
-const toDo = document.querySelector('#myInput');
-const addButton = document.querySelector('.add');
-const listParent = document.querySelector('#myUl');
-let newList = document.createElement('li');
-
-addButton.onclick = function (){
-	if (toDo.value == ''){
-		alert('Write something!')
-	}
-
-	else {
-		newList.innerHTML = newList.innerHTML +  '<li>' + toDo.value + '</li>'
-		listParent.appendChild(newList)
-		toDo.value = ''
-	}
-}
-</script>
+<script src='T_javascript.js'></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

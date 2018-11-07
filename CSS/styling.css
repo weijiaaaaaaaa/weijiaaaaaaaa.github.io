@@ -133,6 +133,38 @@ footer img {
 	float: left;
 }
 
+#to-do input {
+	background-color: #DCDCDC;
+	border-radius: 20px;
+}
+
+.add {
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: #DEB887;
+	font-size: 25px;
+}
+
+
+#to-do-list h2 {
+	margin-bottom: 10px;
+}
+
+input {
+	padding:20px;
+	border-radius: 5px;
+	background-color: #DCDCDC;
+}
+
+button {
+	background-color: purple;
+	border: 0px;
+	font-size: 15px;
+	text-decoration: none;
+	position: absolute;
+	float: clear;
+}
+
 /*Responsive-mobile*/
 @media (max-width: 480px) {
 	#introduction {

@@ -1,0 +1,172 @@
+<!DOCTYPE.html>
+<html>
+<head>
+
+<style>
+	h1 {
+		text-align: center;
+		font-size: 100px
+	}
+
+	#list-data li {
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 250px;
+	}
+
+	li img {
+		width: 100%;
+	}
+
+	.buttons {
+		display: inline-block;
+		background-color: orange;
+		border: 1px solid black;
+		border-radius: 10px;
+		font-size: 50px;
+
+
+	}
+</style>	
+
+<title>Tumblr Api Game</title>
+
+</head>
+
+<body>	
+<h1> Guess the Tag</h1>
+<div>	
+	<button class='buttons' id='btn1'></button>
+	<button class='buttons' id='btn2'></button>
+	<button class='buttons' id='btn3'></button>
+	<button class='buttons' id='btn4'></button>
+
+</div>
+
+<div id='tumblr-pic'>
+	<ul id='list-data'>
+
+	</ul>
+</div>
+
+<script>
+	const list = document.getElementById('list-data')
+
+//array of tags
+const words1 = ['donuts', 'Tokyo', 'beach', 'coffee', 'novels', 'bags']
+const words2 = ['tea', 'London', 'mall', 'cookies', 'movies', 'shoes']
+const words3 = ['chocolate', 'Sydney', 'library', 'sushi', 'magazines', 'dresses']
+const words4 = ['noodles', 'Texas', 'restaurant', 'pizza', 'laptops', 'pants']
+
+// randomly select one tag from each arrays
+var word1 = words1[Math.floor(Math.random()*words1.length)]
+var word2 = words2[Math.floor(Math.random()*words2.length)]
+var word3 = words3[Math.floor(Math.random()*words3.length)]
+var word4 = words4[Math.floor(Math.random()*words4.length)]
+
+// show the array of tags
+const btn1 = document.getElementById('btn1')
+btn1.innerHTML = word1
+
+const btn2 = document.getElementById('btn2')
+btn2.innerHTML = word2
+
+const btn3 = document.getElementById('btn3')
+btn3.innerHTML = word3
+
+const btn4 = document.getElementById('btn4')
+btn4.innerHTML = word4
+
+const btns = [btn1, btn2, btn3, btn4]
+
+// randonly select a tag to fetch pictures
+var words = [word1, word2, word3, word4]
+console.log(words)
+var word = words[Math.floor(Math.random()*words.length)]
+console.log(word)
+
+getTaggedPhotos (word)
+// showing tumblr pictures from one of the tag words 
+function getTaggedPhotos (word) {
+	fetch ('https://api.tumblr.com/v2/tagged?tag=' + word + '&api_key=IUkL8alYhUwFyQSrHyQQCSXIawCxUmRhzN1Bk6O6zj6NXEWqLx').then(function(response){
+	return response.json()
+})
+	.then(function(result){
+		const items = result.response;
+
+		list.innerHTML = ''
+
+		for(i=0; i<items.length; i++){
+			const item = items[i];
+
+			if (item.photos != undefined) {
+
+			// const altSizes = item.photos[0].alt_sizes
+			const ImgSrc = item.photos[0].original_size.url;
+			
+			const img = document.createElement('img');
+			
+			img.src = ImgSrc;
+			
+			const li = document.createElement('li');
+
+			li.appendChild(img)
+			
+			list.appendChild(li)
+			}
+		}
+	})
+	.catch(function(err){
+		console.log(err)
+	})
+}
+
+// alert showing results when a tag is clicked (onclick + alert)
+btn1.onclick = function(event){
+	event.preventDefault();
+	if(btn1.innerHTML == word){
+	alert('That is the right tag!')
+	}
+	else {
+		alert('That is wrong! The corret tag is ' + word +'.')
+	}
+	window.location.reload()
+}
+
+btn2.onclick = function(event){
+	event.preventDefault();
+	if(btn2.innerHTML == word){
+	alert('That is the right tag!')
+	}
+	else {
+		alert('That is wrong! The corret tag is ' + word +'.')
+	}
+	window.location.reload()
+}
+
+btn3.onclick = function(event){
+	event.preventDefault();
+	if(btn3.innerHTML == word){
+	alert('That is the right tag!')
+	}
+	else {
+		alert('That is wrong! The corret tag is ' + word +'.')
+	}
+	window.location.reload()
+}
+
+btn4.onclick = function(event){
+	event.preventDefault();
+	if(btn4.innerHTML == word){
+	alert('That is the right tag!')
+	}
+	else {
+		alert('That is wrong! The corret tag is ' + word +'.')
+	}
+	window.location.reload()
+}
+</script>
+</body>
+
+
+</html>
